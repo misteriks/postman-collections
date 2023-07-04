@@ -1,0 +1,681 @@
+{
+	"info": {
+		"_postman_id": "1ec154b6-f432-42f2-bbcb-a2878f124bea",
+		"name": "Workday Shared Demonstration Gov",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7609730"
+	},
+	"item": [
+		{
+			"name": "SOAP",
+			"item": [
+				{
+					"name": "Get-Workers",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<env:Envelope\r\n    xmlns:env=\"http://schemas.xmlsoap.org/soap/envelope/\"\r\n    xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"\r\n    xmlns:wsse=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd\">\r\n    <env:Body>\r\n        <wd:Get_Workers_Request xmlns:wd=\"urn:com.workday/bsvc\" wd:version=\"v40.2\">\r\n            <wd:Response_Group>\r\n                <wd:Include_Reference>true</wd:Include_Reference>\r\n                <wd:Include_Employment_Information>true</wd:Include_Employment_Information>\r\n            </wd:Response_Group>\r\n            <wd:Response_Filter>\r\n                <wd:As_Of_Effective_Date>2022-12-31</wd:As_Of_Effective_Date>\r\n                <wd:As_Of_Entry_DateTime>2022-10-26T13:12:30</wd:As_Of_Entry_DateTime>\r\n                <wd:Page>1</wd:Page>\r\n                <wd:Count>999</wd:Count>\r\n            </wd:Response_Filter>\r\n        </wd:Get_Workers_Request>\r\n    </env:Body>\r\n</env:Envelope>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/service/gov/Staffing",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"service",
+								"gov",
+								"Staffing"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Pre-Hire",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<env:Envelope xmlns:env=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\r\n  <env:Body>\r\n    <wd:Put_Applicant_Request xmlns:wd=\"urn:com.workday/bsvc\" wd:Add_Only=\"true\" wd:version=\"v40.2\">\r\n      <wd:Applicant_Data>\r\n        <wd:Personal_Data>\r\n          <wd:Name_Data>\r\n            <wd:Legal_Name_Data>\r\n              <wd:Name_Detail_Data>\r\n                <wd:First_Name>Dave</wd:First_Name>\r\n                <wd:Last_Name>Matthews</wd:Last_Name>\r\n\t\t\t\t<wd:Country_Reference>\r\n\t\t\t\t\t<wd:ID wd:type=\"ISO_3166-1_Alpha-2_Code\">NL</wd:ID>\r\n\t\t\t\t</wd:Country_Reference>\r\n              </wd:Name_Detail_Data>\r\n            </wd:Legal_Name_Data>\r\n          </wd:Name_Data>\r\n          <wd:Contact_Data>\r\n             <wd:Phone_Data>\r\n              <wd:International_Phone_Code>31</wd:International_Phone_Code>\r\n              <wd:Phone_Number>732558855</wd:Phone_Number>\r\n              <wd:Phone_Device_Type_Reference>\r\n                <wd:ID wd:type=\"Phone_Device_Type_ID\">Mobile</wd:ID>\r\n              </wd:Phone_Device_Type_Reference>\r\n              <wd:Usage_Data wd:Public=\"true\">\r\n                <wd:Type_Data wd:Primary=\"true\">\r\n                  <wd:Type_Reference>\r\n                    <wd:ID wd:type=\"Communication_Usage_Type_ID\">HOME</wd:ID>\r\n                  </wd:Type_Reference>\r\n                </wd:Type_Data>\r\n              </wd:Usage_Data>\r\n            </wd:Phone_Data>\r\n          </wd:Contact_Data>\r\n        </wd:Personal_Data>\r\n      </wd:Applicant_Data>\r\n    </wd:Put_Applicant_Request>\r\n  </env:Body>\r\n</env:Envelope>\r\n",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/service/gov/Staffing",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"service",
+								"gov",
+								"Staffing"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Pre-Hires",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<env:Envelope xmlns:env=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\r\n  <env:Body>\r\n    <wd:Get_Applicants_Request xmlns:wd=\"urn:com.workday/bsvc\" wd:version=\"v40.2\">\r\n      <wd:Response_Filter>\r\n        <wd:As_Of_Effective_Date>2023-07-04</wd:As_Of_Effective_Date>\r\n        <wd:As_Of_Entry_DateTime>2023-07-04T18:01:59</wd:As_Of_Entry_DateTime>\r\n        <wd:Page>1</wd:Page>\r\n        <wd:Count>100</wd:Count>\r\n      </wd:Response_Filter>\r\n      <wd:Response_Group>\r\n        <wd:Include_Reference>true</wd:Include_Reference>\r\n        <wd:Include_Personal_Information>true</wd:Include_Personal_Information>\r\n        <wd:Show_All_Personal_Information>true</wd:Show_All_Personal_Information>\r\n        <wd:Include_Recruiting_Information>true</wd:Include_Recruiting_Information>\r\n        <wd:Include_Qualification_Profile>true</wd:Include_Qualification_Profile>\r\n        <wd:Include_Resume>true</wd:Include_Resume>\r\n        <wd:Include_Background_Check>true</wd:Include_Background_Check>\r\n        <wd:Include_External_Integration_ID_Data>true</wd:Include_External_Integration_ID_Data>\r\n      </wd:Response_Group>\r\n    </wd:Get_Applicants_Request>\r\n  </env:Body>\r\n</env:Envelope>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/service/gov/Staffing",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"service",
+								"gov",
+								"Staffing"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Positions",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<env:Envelope xmlns:env=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\r\n  <env:Body>\r\n    <wd:Get_Positions_Request xmlns:wd=\"urn:com.workday/bsvc\" wd:version=\"v40.2\">\r\n      <wd:Response_Filter>\r\n        <wd:As_Of_Effective_Date>2023-07-04</wd:As_Of_Effective_Date>\r\n        <wd:As_Of_Entry_DateTime>2023-07-04T19:05:18</wd:As_Of_Entry_DateTime>\r\n        <wd:Page>1</wd:Page>\r\n        <wd:Count>100</wd:Count>\r\n      </wd:Response_Filter>\r\n      <wd:Response_Group>\r\n        <wd:Include_Reference>true</wd:Include_Reference>\r\n        <wd:Include_Position_Definition_Data>true</wd:Include_Position_Definition_Data>\r\n        <wd:Include_Position_Restrictions_Data>true</wd:Include_Position_Restrictions_Data>\r\n        <wd:Include_Position_Restriction_Working_Hours_Details_Data>true</wd:Include_Position_Restriction_Working_Hours_Details_Data>\r\n        <wd:Include_Default_Compensation_Data>true</wd:Include_Default_Compensation_Data>\r\n        <wd:Include_Default_Position_Organization_Assignment_Data>true</wd:Include_Default_Position_Organization_Assignment_Data>\r\n        <wd:Include_Worker_For_Filled_Positions_Data>true</wd:Include_Worker_For_Filled_Positions_Data>\r\n        <wd:Include_Qualifications>true</wd:Include_Qualifications>\r\n        <wd:Include_Job_Requisition_Data>true</wd:Include_Job_Requisition_Data>\r\n        <wd:Include_Job_Requisition_Attachments>true</wd:Include_Job_Requisition_Attachments>\r\n      </wd:Response_Group>\r\n    </wd:Get_Positions_Request>\r\n  </env:Body>\r\n</env:Envelope>\r\n",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/service/gov/Staffing",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"service",
+								"gov",
+								"Staffing"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "REST",
+			"item": [
+				{
+					"name": "Business Process (v1)",
+					"item": [
+						{
+							"name": "Event Steps",
+							"item": [
+								{
+									"name": "/eventSteps",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}/api/businessProcess/v1/gov/eventSteps",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"api",
+												"businessProcess",
+												"v1",
+												"gov",
+												"eventSteps"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Events",
+							"item": [
+								{
+									"name": "/events",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}/api/businessProcess/v1/gov/events",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"api",
+												"businessProcess",
+												"v1",
+												"gov",
+												"events"
+											],
+											"query": [
+												{
+													"key": "businessProcess",
+													"value": "b062102c3d5a10000ab163d4b7f40069",
+													"disabled": true
+												},
+												{
+													"key": "completedOnOrAfter",
+													"value": "2023-01-01",
+													"disabled": true
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "/events/{ID}",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}/api/businessProcess/v1/gov/events/08e574a19f6b400fac5dbe71ea854f1d",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"api",
+												"businessProcess",
+												"v1",
+												"gov",
+												"events",
+												"08e574a19f6b400fac5dbe71ea854f1d"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Types",
+							"item": [
+								{
+									"name": "/types",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}/api/businessProcess/v1/gov/types",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"api",
+												"businessProcess",
+												"v1",
+												"gov",
+												"types"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "/types/{ID}",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}/api/businessProcess/v1/gov/types/08e574a19f6b400fac5dbe71ea854f1d",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"api",
+												"businessProcess",
+												"v1",
+												"gov",
+												"types",
+												"08e574a19f6b400fac5dbe71ea854f1d"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Common (v1)",
+					"item": [
+						{
+							"name": "Supervisory Organizations",
+							"item": [
+								{
+									"name": "/supervisoryOrganizations",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}/api/common/v1/gov/supervisoryOrganizations",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"api",
+												"common",
+												"v1",
+												"gov",
+												"supervisoryOrganizations"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Staffing (v5)",
+					"item": [
+						{
+							"name": "Supervisory Organizations",
+							"item": [
+								{
+									"name": "/supervisoryOrganizations",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}/api/staffing/v5/gov/supervisoryOrganizations",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"api",
+												"staffing",
+												"v5",
+												"gov",
+												"supervisoryOrganizations"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "/supervisoryOrganizations/{ID}/members",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}/api/staffing/v5/gov/supervisoryOrganizations/6b2fcff0fb78105d36242bb236a50158/members",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"api",
+												"staffing",
+												"v5",
+												"gov",
+												"supervisoryOrganizations",
+												"6b2fcff0fb78105d36242bb236a50158",
+												"members"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Wql (v1)",
+					"item": [
+						{
+							"name": "dataSources",
+							"item": [
+								{
+									"name": "Workday WQL /dataSources",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "wd-metadata-api-version",
+												"value": "v1",
+												"description": "See all attributes and if they are hidden",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"url": {
+											"raw": "{{base_url}}/api/wql/v1/gov/dataSources?limit=100",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"api",
+												"wql",
+												"v1",
+												"gov",
+												"dataSources"
+											],
+											"query": [
+												{
+													"key": "limit",
+													"value": "100"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "data",
+							"item": [
+								{
+									"name": "GET Indexed Completed New Hire Business Process Transactions",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "wd-metadata-api-version",
+												"value": "v1",
+												"description": "See all attributes and if they are hidden",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n   \"query\": \"SELECT businessProcessEventAlternateName, dateAndTimeInitiated, dateAndTimeCompleted, businessProcess, worker FROM businessProcessTransactionsIndexed (dataSourceFilter = businessProcessType, businessProcessName = (08e574a19f6b400fac5dbe71ea854f1d)) WHERE businessProcessName in (08e574a19f6b400fac5dbe71ea854f1d) AND (dateAndTimeCompleted > '2023-06-15' AND transactionStatus = (B90bc51be01d4ae99b603b02b073714d))\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/api/wql/v1/gov/data",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"api",
+												"wql",
+												"v1",
+												"gov",
+												"data"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "GET businessProcessTypes",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "wd-metadata-api-version",
+												"value": "v1",
+												"description": "See all attributes and if they are hidden",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n   \"query\": \"SELECT businessProcessType FROM allBusinessProcessTypes\" \r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/api/wql/v1/gov/data",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"api",
+												"wql",
+												"v1",
+												"gov",
+												"data"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "GET Bearer Token",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "{{client_id}}",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "{{client_secret}}",
+							"type": "text"
+						},
+						{
+							"key": "refresh_token",
+							"value": "{{refresh_token}}",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "refresh_token",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/oauth2/gov/token",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"oauth2",
+						"gov",
+						"token"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{AccessToken}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"const echoPostRequest = {",
+					"  url: pm.variables.get(\"base_url\") + '/oauth2/gov/token',",
+					"  method: 'POST',",
+					"  header: 'Content-Type:application/x-www-form-urlencoded',",
+					"  body: {",
+					"    mode: 'urlencoded',",
+					"    urlencoded: [",
+					"        {key: \"grant_type\", value: \"refresh_token\"},",
+					"        {key: \"refresh_token\", value: pm.variables.get(\"refresh_token\")},",
+					"        {key: \"client_id\", value: pm.variables.get(\"client_id\")},",
+					"        {key: \"client_secret\", value: pm.variables.get(\"client_secret\")}",
+					"    ]",
+					"  }",
+					"};",
+					"",
+					"console.log('Retrieving new Bearer Access Token from Workday Tenant ' + pm.variables.get(\"base_url\"))",
+					"",
+					"pm.sendRequest(echoPostRequest, function (err, res) {",
+					"console.log(err ? err : res.json());",
+					"    if (err === null) {",
+					"        console.log('Saving the new Bearer Token in collection variables as \"AccessToken\"')",
+					"        var responseJson = res.json();",
+					"        pm.collectionVariables.set('AccessToken', responseJson.access_token)",
+					"    }",
+					"});",
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "client_id",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "client_secret",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "refresh_token",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "base_url",
+			"value": "https://sharedgovpreview.workdaysuv.com/ccx",
+			"type": "string"
+		},
+		{
+			"key": "AccessToken",
+			"value": ""
+		}
+	]
+}
