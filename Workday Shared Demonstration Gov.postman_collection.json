@@ -35,13 +35,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{base_url}}/service/gov/Staffing",
+							"raw": "{{base_url}}/service/{{tenant_name}}/Staffing",
 							"host": [
 								"{{base_url}}"
 							],
 							"path": [
 								"service",
-								"gov",
+								"{{tenant_name}}",
 								"Staffing"
 							]
 						}
@@ -74,13 +74,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{base_url}}/service/gov/Staffing",
+							"raw": "{{base_url}}/service/{{tenant_name}}/Staffing",
 							"host": [
 								"{{base_url}}"
 							],
 							"path": [
 								"service",
-								"gov",
+								"{{tenant_name}}",
 								"Staffing"
 							]
 						}
@@ -113,13 +113,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{base_url}}/service/gov/Staffing",
+							"raw": "{{base_url}}/service/{{tenant_name}}/Staffing",
 							"host": [
 								"{{base_url}}"
 							],
 							"path": [
 								"service",
-								"gov",
+								"{{tenant_name}}",
 								"Staffing"
 							]
 						}
@@ -152,13 +152,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{base_url}}/service/gov/Staffing",
+							"raw": "{{base_url}}/service/{{tenant_name}}/Staffing",
 							"host": [
 								"{{base_url}}"
 							],
 							"path": [
 								"service",
-								"gov",
+								"{{tenant_name}}",
 								"Staffing"
 							]
 						}
@@ -202,7 +202,7 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{base_url}}/api/businessProcess/v1/gov/eventSteps",
+											"raw": "{{base_url}}/api/businessProcess/v1/{{tenant_name}}/eventSteps",
 											"host": [
 												"{{base_url}}"
 											],
@@ -210,7 +210,7 @@
 												"api",
 												"businessProcess",
 												"v1",
-												"gov",
+												"{{tenant_name}}",
 												"eventSteps"
 											]
 										}
@@ -228,7 +228,7 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{base_url}}/api/businessProcess/v1/gov/events",
+											"raw": "{{base_url}}/api/businessProcess/v1/{{tenant_name}}/events",
 											"host": [
 												"{{base_url}}"
 											],
@@ -236,7 +236,7 @@
 												"api",
 												"businessProcess",
 												"v1",
-												"gov",
+												"{{tenant_name}}",
 												"events"
 											],
 											"query": [
@@ -261,7 +261,7 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{base_url}}/api/businessProcess/v1/gov/events/08e574a19f6b400fac5dbe71ea854f1d",
+											"raw": "{{base_url}}/api/businessProcess/v1/{{tenant_name}}/events/08e574a19f6b400fac5dbe71ea854f1d",
 											"host": [
 												"{{base_url}}"
 											],
@@ -269,7 +269,7 @@
 												"api",
 												"businessProcess",
 												"v1",
-												"gov",
+												"{{tenant_name}}",
 												"events",
 												"08e574a19f6b400fac5dbe71ea854f1d"
 											]
@@ -288,7 +288,7 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{base_url}}/api/businessProcess/v1/gov/types",
+											"raw": "{{base_url}}/api/businessProcess/v1/{{tenant_name}}/types",
 											"host": [
 												"{{base_url}}"
 											],
@@ -296,7 +296,7 @@
 												"api",
 												"businessProcess",
 												"v1",
-												"gov",
+												"{{tenant_name}}",
 												"types"
 											]
 										}
@@ -309,7 +309,7 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{base_url}}/api/businessProcess/v1/gov/types/08e574a19f6b400fac5dbe71ea854f1d",
+											"raw": "{{base_url}}/api/businessProcess/v1/{{tenant_name}}/types/08e574a19f6b400fac5dbe71ea854f1d",
 											"host": [
 												"{{base_url}}"
 											],
@@ -317,7 +317,7 @@
 												"api",
 												"businessProcess",
 												"v1",
-												"gov",
+												"{{tenant_name}}",
 												"types",
 												"08e574a19f6b400fac5dbe71ea854f1d"
 											]
@@ -341,7 +341,7 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{base_url}}/api/common/v1/gov/supervisoryOrganizations",
+											"raw": "{{base_url}}/api/common/v1/{{tenant_name}}/supervisoryOrganizations",
 											"host": [
 												"{{base_url}}"
 											],
@@ -349,7 +349,7 @@
 												"api",
 												"common",
 												"v1",
-												"gov",
+												"{{tenant_name}}",
 												"supervisoryOrganizations"
 											]
 										}
@@ -372,7 +372,7 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{base_url}}/api/staffing/v5/gov/supervisoryOrganizations",
+											"raw": "{{base_url}}/api/staffing/v5/{{tenant_name}}/supervisoryOrganizations",
 											"host": [
 												"{{base_url}}"
 											],
@@ -380,7 +380,7 @@
 												"api",
 												"staffing",
 												"v5",
-												"gov",
+												"{{tenant_name}}",
 												"supervisoryOrganizations"
 											]
 										}
@@ -393,7 +393,7 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{base_url}}/api/staffing/v5/gov/supervisoryOrganizations/6b2fcff0fb78105d36242bb236a50158/members",
+											"raw": "{{base_url}}/api/staffing/v5/{{tenant_name}}/supervisoryOrganizations/6b2fcff0fb78105d36242bb236a50158/members",
 											"host": [
 												"{{base_url}}"
 											],
@@ -401,7 +401,7 @@
 												"api",
 												"staffing",
 												"v5",
-												"gov",
+												"{{tenant_name}}",
 												"supervisoryOrganizations",
 												"6b2fcff0fb78105d36242bb236a50158",
 												"members"
@@ -434,7 +434,7 @@
 											}
 										],
 										"url": {
-											"raw": "{{base_url}}/api/wql/v1/gov/dataSources?limit=100",
+											"raw": "{{base_url}}/api/wql/v1/{{tenant_name}}/dataSources?limit=100",
 											"host": [
 												"{{base_url}}"
 											],
@@ -442,7 +442,7 @@
 												"api",
 												"wql",
 												"v1",
-												"gov",
+												"{{tenant_name}}",
 												"dataSources"
 											],
 											"query": [
@@ -483,7 +483,7 @@
 											}
 										},
 										"url": {
-											"raw": "{{base_url}}/api/wql/v1/gov/data",
+											"raw": "{{base_url}}/api/wql/v1/{{tenant_name}}/data",
 											"host": [
 												"{{base_url}}"
 											],
@@ -491,7 +491,7 @@
 												"api",
 												"wql",
 												"v1",
-												"gov",
+												"{{tenant_name}}",
 												"data"
 											]
 										}
@@ -521,7 +521,7 @@
 											}
 										},
 										"url": {
-											"raw": "{{base_url}}/api/wql/v1/gov/data",
+											"raw": "{{base_url}}/api/wql/v1/{{tenant_name}}/data",
 											"host": [
 												"{{base_url}}"
 											],
@@ -529,7 +529,7 @@
 												"api",
 												"wql",
 												"v1",
-												"gov",
+												"{{tenant_name}}",
 												"data"
 											]
 										}
@@ -583,13 +583,13 @@
 					]
 				},
 				"url": {
-					"raw": "{{base_url}}/oauth2/gov/token",
+					"raw": "{{base_url}}/oauth2/{{tenant_name}}/token",
 					"host": [
 						"{{base_url}}"
 					],
 					"path": [
 						"oauth2",
-						"gov",
+						"{{tenant_name}}",
 						"token"
 					]
 				}
@@ -614,7 +614,7 @@
 				"type": "text/javascript",
 				"exec": [
 					"const echoPostRequest = {",
-					"  url: pm.variables.get(\"base_url\") + '/oauth2/gov/token',",
+					"  url: pm.variables.get(\"base_url\") + '/oauth2/' + pm.variables.get(\"tenant_name\") + '/token',",
 					"  method: 'POST',",
 					"  header: 'Content-Type:application/x-www-form-urlencoded',",
 					"  body: {",
@@ -655,17 +655,17 @@
 	"variable": [
 		{
 			"key": "client_id",
-			"value": "",
+			"value": "Mjk2ZWU3YjQtM2RlYy00MDc3LWIxNTctYzBmOTY0YjdlODhj",
 			"type": "string"
 		},
 		{
 			"key": "client_secret",
-			"value": "",
+			"value": "111ckiwbsns50yruc67i9m1cxtxbjmk2op9x825uwfighbri204o9rlakycld4mgmyrcfjaq05f2z2wfkgtsw2of7ueqo1fzgik",
 			"type": "string"
 		},
 		{
 			"key": "refresh_token",
-			"value": "",
+			"value": "xrhvaugq2tt45lgbcb2ddt7bdvlovr3dmlkifkalaxzxql2o3qq6jkdbb579xsqcfk1b46q9rov3rzyye9hpq16t1wiinqy5yan",
 			"type": "string"
 		},
 		{
@@ -676,6 +676,11 @@
 		{
 			"key": "AccessToken",
 			"value": ""
+		},
+		{
+			"key": "tenant_name",
+			"value": "gov",
+			"type": "string"
 		}
 	]
 }
